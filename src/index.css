@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Fundo de pontinhos maiores, mais espaçados e “embaralhados” */
+.bg-dots {
+  background-image:
+    radial-gradient(
+      circle at 10px 10px,
+      rgba(236, 72, 153, 0.45) 2.2px,
+      transparent 0
+    ),
+    radial-gradient(
+      circle at 60px 40px,
+      rgba(244, 114, 182, 0.35) 2.6px,
+      transparent 0
+    ),
+    radial-gradient(
+      circle at 30px 80px,
+      rgba(147, 51, 234, 0.3) 3px,
+      transparent 0
+    );
+  background-size:
+    140px 140px,
+    180px 180px,
+    220px 220px;
+  background-repeat: repeat;
+}
+
+@keyframes moveDots {
+  0% {
+    background-position:
+      0px 0px,
+      0px 0px,
+      0px 0px;
+  }
+  50% {
+    background-position:
+      40px 70px,
+      -30px 40px,
+      60px -20px;
+  }
+  100% {
+    background-position:
+      80px 120px,
+      -60px 80px,
+      120px -40px;
+  }
+}
+
+.animate-dots {
+  animation: moveDots 40s ease-in-out infinite alternate;
+}
+
+/* MARQUEE DAS TECNOLOGIAS */
+.tech-marquee {
+  overflow: hidden;
+  position: relative;
+  /* efeito de fade nas bordas */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
